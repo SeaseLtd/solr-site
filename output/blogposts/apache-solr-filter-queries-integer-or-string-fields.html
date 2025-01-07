@@ -38,15 +38,15 @@
 <script src="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js"/></script>
 <script src="/theme/javascript/lib/jquery.smooth-scroll.min.js?v=4dd59757"></script>
 <script src="/theme/javascript/main.js?v=4dd59757"></script>
-<script src="https://www.apachecon.com/event-images/snippet.js"></script>    <title>Categorical Features in Apache Solr Learning to Rank - Apache Solr</title>
+<script src="https://www.apachecon.com/event-images/snippet.js"></script>    <title>Apache Solr Filter Queries: Integer or String Fields? - Apache Solr</title>
 
     <meta name="keywords"
           content="apache, apache lucene, apache solr, solr, lucene,
                    search, information retrieval, spell checking, faceting, inverted index, open source"/>
      <meta property="og:type" content="website" />
-     <meta property="og:url" content="https://solr.apache.org/blogposts/categorical-features-in-apache-solr-learning-to-rank.html"/>
-     <meta property="og:title" content="Categorical Features in Apache Solr Learning to Rank"/>
-     <meta property="og:description" content="Categorical Features in Apache Solr Learning to Rank If you're reading this post, you're likely interested in Apache Solr's Learning..."/>
+     <meta property="og:url" content="https://solr.apache.org/blogposts/apache-solr-filter-queries-integer-or-string-fields.html"/>
+     <meta property="og:title" content="Apache Solr Filter Queries: Integer or String Fields?"/>
+     <meta property="og:description" content="Apache Solr Filter Queries: Integer or String Fields? Imagine you are setting up an Apache Solr index and need to handle a field..."/>
      <meta property="og:image" content="https://solr.apache.org/theme/images/solr_og_image.png?v=4dd59757"/>
      <meta property="og:image:secure_url" content="https://solr.apache.org/theme/solr/solr_og_image.png?v=4dd59757"/>
 
@@ -117,11 +117,10 @@
 <div class="header-fill"></div>
 <div class="container">
   <div class="row">
-<h1 id="categorical-features-in-apache-solr-learning-to-rank">Categorical Features in Apache Solr Learning to Rank</h1>
-<p>If you're reading this post, you're likely interested in Apache Solr's Learning to Rank features, particularly how to implement categorical features. 
-In this article, we'll provide an overview of the feature types currently supported by Solr and the computational cost of using them. 
-We'll also look into which of these feature types can be adapted to implement categorical features, since Solr doesn't offer dedicated support for them. 
-Instead, we'll explore how to make the most of the available options. To read the full post, continue here: <a href="https://sease.io/2022/10/categorical-features-in-apache-solr-learning-to-rank.html">Categorical Features in Apache Solr Learning to Rank
+<h1 id="apache-solr-filter-queries-integer-or-string-fields">Apache Solr Filter Queries: Integer or String Fields?</h1>
+<p>Imagine you are setting up an Apache Solr index and need to handle a field representing an ID that will be used frequently in filter queries.
+The key question is: how should you index this field for optimal performance? Should you use a string field type, or would an integer field type be more efficient?</p>
+<p>Let's combine the results of a local experiment with insights from online research to evaluate which option delivers better performance. Continue to the full post here: <a href="https://sease.io/2024/11/apache-solr-filter-queries-integer-or-string-fields.html">Apache Solr Filter Queries: Integer or String Fields?
 </a></p>  </div>
 </div>
     <footer>
