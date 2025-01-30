@@ -20,24 +20,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="minimal-ui, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600,500' rel='stylesheet' type='text/css'>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/theme/css/lib/foundation/normalize.css?v=4dd59757" />
-<link rel="stylesheet" href="/theme/css/lib/foundation/foundation.min.css?v=4dd59757"/>
-<link rel="stylesheet" href="/theme/css/lib/foundation/foundation-icons.css?v=4dd59757"/>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css"/>
-<link rel="stylesheet" href="/theme/css/base.css?v=4dd59757" />
+<link rel="stylesheet" href="/theme/css/google-fonts-raleway.css?v=7983f64e" />
+<link rel="stylesheet" href="/theme/css/google-fonts-kalam.css?v=7983f64e" />
+<link rel="stylesheet" href="/theme/css/font-awesome.min.css?v=7983f64e" />
+<link rel="stylesheet" href="/theme/css/lib/foundation/normalize.css?v=7983f64e" />
+<link rel="stylesheet" href="/theme/css/lib/foundation/foundation.min.css?v=7983f64e"/>
+<link rel="stylesheet" href="/theme/css/lib/foundation/foundation-icons.css?v=7983f64e"/>
+<link rel="stylesheet" href="/theme/css/base.css?v=7983f64e" />
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="index,follow"/>
 
 <script src="/theme/javascript/lib/jquery-2.1.1.min.js"></script>
-<script src="/theme/javascript/lib/foundation/modernizr.js?v=4dd59757"></script>
-<script src="/theme/javascript/lib/angularjs/angular.min.js?v=4dd59757"></script>
-<script src="/theme/javascript/lib/angularjs/angular-animate.min.js?v=4dd59757"></script>
-<script src="/theme/javascript/lib/foundation/foundation.min.js?v=4dd59757"></script>
-<script src="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js"/></script>
-<script src="/theme/javascript/lib/jquery.smooth-scroll.min.js?v=4dd59757"></script>
-<script src="/theme/javascript/main.js?v=4dd59757"></script>
+<script src="/theme/javascript/lib/foundation/modernizr.js?v=7983f64e"></script>
+<script src="/theme/javascript/lib/angularjs/angular.min.js?v=7983f64e"></script>
+<script src="/theme/javascript/lib/angularjs/angular-animate.min.js?v=7983f64e"></script>
+<script src="/theme/javascript/lib/foundation/foundation.min.js?v=7983f64e"></script>
+<script src="/theme/javascript/lib/jquery.smooth-scroll.min.js?v=7983f64e"></script>
+<script src="/theme/javascript/main.js?v=7983f64e"></script>
 <script src="https://www.apachecon.com/event-images/snippet.js"></script>    <title>Solr News - Apache Solr</title>
 
     <meta name="keywords"
@@ -47,8 +46,8 @@
      <meta property="og:url" content="https://solr.apache.org/news.html"/>
      <meta property="og:title" content="Solr News"/>
      <meta property="og:description" content="You may also read these news as an ATOM feed."/>
-     <meta property="og:image" content="https://solr.apache.org/theme/images/solr_og_image.png?v=4dd59757"/>
-     <meta property="og:image:secure_url" content="https://solr.apache.org/theme/solr/solr_og_image.png?v=4dd59757"/>
+     <meta property="og:image" content="https://solr.apache.org/theme/images/solr_og_image.png?v=7983f64e"/>
+     <meta property="og:image:secure_url" content="https://solr.apache.org/theme/solr/solr_og_image.png?v=7983f64e"/>
 
    <link rel="icon" href="/theme/images/favicon.ico" type="image/x-icon">
    <link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon">
@@ -135,6 +134,71 @@
   <h1 id="solr-news">Solr<sup>™</sup> News<a class="headerlink" href="#solr-news" title="Permanent link">¶</a></h1>
   <p>You may also read these news as an <a href="/feeds/solr/news.atom.xml">ATOM feed</a>.</p>
 
+  <h2 id="cve-2024-52012-apache-solr-configset-upload-on-windows-allows-arbitrary-path-write-access">26 January 2025, CVE-2024-52012: Apache Solr: Configset upload on Windows allows arbitrary path write-access
+    <a class="headerlink" href="#cve-2024-52012-apache-solr-configset-upload-on-windows-allows-arbitrary-path-write-access" title="Permanent link">¶</a>
+  </h2>
+  <p><strong>Severity</strong>
+moderate</p>
+<p><strong>Versions Affected</strong></p>
+<ul>
+<li>Apache Solr 6.6 through 9.7.0</li>
+</ul>
+<p><strong>Description</strong></p>
+<p>Relative Path Traversal vulnerability in Apache Solr.</p>
+<p>Solr instances running on Windows are vulnerable to arbitrary filepath write-access, due to a lack of input-sanitation in the "configset upload" API.  Commonly known as a "zipslip", maliciously constructed ZIP files can use relative filepaths to write data to unanticipated parts of the filesystem.<br>
+This issue affects Apache Solr: from 6.6 through 9.7.0.</p>
+<p><strong>Mitigation</strong></p>
+<p>Users are recommended to upgrade to version 9.8.0, which fixes the issue.  Users unable to upgrade may also safely prevent the issue by using Solr's "Rule-Based Authentication Plugin" to restrict access to the configset upload API, so that it can only be accessed by a trusted set of administrators/users.</p>
+<p><strong>Credit</strong>
+rry (reporter)</p>
+<p><strong>References</strong>
+JIRA - <a href="https://issues.apache.org/jira/browse/SOLR-17543">SOLR-17543</a>
+CVE - <a href="https://www.cve.org/CVERecord?id=CVE-2024-52012">CVE-2024-52012</a></p>
+  <h2 id="cve-2025-24814-apache-solr-core-creation-with-trusted-configset-can-use-arbitrary-untrusted-files">26 January 2025, CVE-2025-24814: Apache Solr: Core-creation with "trusted" configset can use arbitrary untrusted files
+    <a class="headerlink" href="#cve-2025-24814-apache-solr-core-creation-with-trusted-configset-can-use-arbitrary-untrusted-files" title="Permanent link">¶</a>
+  </h2>
+  <p><strong>Severity</strong>
+moderate</p>
+<p><strong>Versions Affected</strong></p>
+<ul>
+<li>Apache Solr through 9.7</li>
+</ul>
+<p><strong>Description</strong></p>
+<p>Core creation allows users to replace "trusted" configset files with arbitrary configuration</p>
+<p>Solr instances that (1) use the "FileSystemConfigSetService" component (the default in "standalone" or "user-managed" mode), and (2) are running without authentication and authorization are vulnerable to a sort of privilege escalation wherein individual "trusted" configset files can be ignored in favor of potentially-untrusted replacements available elsewhere on the filesystem.  These replacement config files are treated as "trusted" and can use "<lib>" tags to add to Solr's classpath, which an attacker might use to load malicious code as a searchComponent or other plugin.</p>
+<p>This issue affects all Apache Solr versions up through Solr 9.7.</p>
+<p><strong>Mitigation</strong></p>
+<p>Users can protect against the vulnerability by enabling authentication and authorization on their Solr clusters or switching to SolrCloud (and away from "FileSystemConfigSetService").  Users are also recommended to upgrade to Solr 9.8.0, which mitigates this issue by disabling use of "<lib>" tags by default.</p>
+<p><strong>Credit</strong>
+pwn null (reporter)</p>
+<p><strong>References</strong>
+JIRA - <a href="https://issues.apache.org/jira/browse/SOLR-16781">SOLR-16781</a>
+CVE - <a href="https://www.cve.org/CVERecord?id=CVE-2025-24814">CVE-2025-24814</a></p>
+  <h2 id="apache-solrtm-980-available">23 January 2025, Apache Solr™ 9.8.0 available
+    <a class="headerlink" href="#apache-solrtm-980-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Solr PMC is pleased to announce the release of Apache Solr 9.8.0.</p>
+<p>Solr is the blazing-fast, open source, multi-modal search platform built on Apache Lucene. It powers full-text, vector, analytics, and geospatial search at many of the world's largest organizations. Other major features include Kubernetes and docker integration, streaming, highlighting, faceting, and spellchecking.</p>
+<p>Solr 9.8.0 is available for immediate download at:</p>
+<p><a href="https://solr.apache.org/downloads.html">https://solr.apache.org/downloads.html</a></p>
+<h3 id="solr-980-release-highlights">Solr 9.8.0 Release Highlights:</h3>
+<ul>
+<li>The Solr Cross-DC Project has graduated from the sandbox repository into the Solr project as a supported capability.</li>
+<li>Requests can specify the 'memAllowed' parameter to halt requests that have exceeded this amount of memory (similar to timeAllowed but for memory).</li>
+<li>New knn_text_to_vector query parser that encodes query text into a vector (AKA "embedding") via external LLM services.</li>
+<li>New ParallelHttpShardHandlerFactory for reducing distributed-search latency in collections with many shards. This is not used by default.</li>
+<li>Cluster properties can now be listed or read individually using new v2 APIs ("GET /api/cluster/properties" and "GET /api/cluster/properties/propName")</li>
+<li>SolrJ CloudSolrClient now performs reasonably when configured with Solr URLs, which is increasingly going to be preferred over ZK URLs.  Some big performance improvements occurred this release.</li>
+<li>Shard splits now support indexes with nested documents.</li>
+<li><code>"&lt;lib\&gt;"</code> tags in solrconfig.xml are now quietly ignored by default unless explicitly enabled with the <code>SOLR_CONFIG_LIB_ENABLED=true</code> environment variable (or corresponding sysprop)</li>
+<li>multiThreaded=true no longer risks rejected exceptions under load.  But you may need to increase the thread pool to more fully utilize a machine than previously.</li>
+</ul>
+<p>Please refer to the Upgrade Notes in the Solr Ref Guide for information on upgrading from previous Solr versions:</p>
+<p><a href="https://github.com/apache/solr/blob/main/solr/solr-ref-guide/modules/upgrade-notes/pages/major-changes-in-solr-9.adoc#solr-98">https://github.com/apache/solr/blob/main/solr/solr-ref-guide/modules/upgrade-notes/pages/major-changes-in-solr-9.adoc#solr-98</a></p>
+<p>Please read CHANGES.txt for a full list of new features, changes and bug-fixes:</p>
+<p><a href="https://solr.apache.org/9_8_0/changes/Changes.html">https://solr.apache.org/9_8_0/changes/Changes.html</a></p>
+<h4 id="thanks-to-all-contributors">Thanks to all contributors</h4>
+<p>David Smiley, Eric Pugh, Jason Gerlowski, Houston Putman, Sanjay Dutt, Andrzej Bialecki, Christos Malliaridis, Aparna Suresh, Pierre Salagnac, Gus Heck, hossman, Rahul Goswami, Jan Høydahl, Bruno Roustant, Uwe Schindler, Mark Miller, Alessandro Benedetti, Tim Owens, Carlos Ugarte, Matthew Biscocho, shalin, Paul McArthur, Mathieu Marie, Haythem Khiri, James Dyer, Zack Kendall, Shawn Heisey, Stephen Zhou, Christine Poerschke, Alexander Zagniotov, Martin Anzinger, Peter Kroiss, Andrey Bozhko, Anshum Gupta</p>
   <h2 id="solr-8-reaches-end-of-life">25 October 2024, Solr 8 reaches End-Of-Life
     <a class="headerlink" href="#solr-8-reaches-end-of-life" title="Permanent link">¶</a>
   </h2>
@@ -4445,6 +4509,7 @@ file included with the release for a full list of details.</p>
 <script>
   $(document).foundation();
 </script>
+<!-- TODO: This script is commented out because we do not use slick slider.
 <script>
   $(document).ready(function(){
     $('.slider').slick({
@@ -4487,5 +4552,7 @@ file included with the release for a full list of details.</p>
       nextArrow: '<i class="fa fa-angle-right fa-2x slider-next"></i>'
     });
   });
-</script>  </body>
+</script>
+-->
+  </body>
 </html>
