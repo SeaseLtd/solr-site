@@ -51,7 +51,23 @@
 
    <link rel="icon" href="/theme/images/favicon.ico" type="image/x-icon">
    <link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon">
-  </head>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(["disableCookies"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '76']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->  </head>
 
   <body class="page homepage"  x-ng-app="page" x-ng-controller="page.controllers.main">
 <div class="contain-to-grid">
@@ -121,17 +137,17 @@
     </div>
   </div>
 </section>
-<section class="topnews" latest-date="2025-01-23">
+<section class="topnews" latest-date="2025-03-11">
   <div class="row">
-    <p id="apache-solrtm-980-available">
-      <a href="/news.html#apache-solrtm-980-available"><b>NEWS:</b> Apache Solr™ 9.8.0 available</a> <span class="news-date">(23.Jan)</span>
+    <p id="apache-solrtm-981-available">
+      <a href="/news.html#apache-solrtm-981-available"><b>NEWS:</b> Apache Solr™ 9.8.1 available</a> <span class="news-date">(11.Mar)</span>
     </p>
   </div>
 </section>
-<section class="topnews-operator" latest-date="2025-01-22">
+<section class="topnews-operator" latest-date="2025-03-25">
   <div class="row">
-    <p id="apache-solr-operatortm-v090-available-operator">
-      <a href="/operator/news.html#apache-solr-operatortm-v090-available"><b>NEWS:</b> Apache Solr Operator™ v0.9.0 available</a> <span class="news-date">(22.Jan)</span>
+    <p id="apache-solr-operatortm-v091-available-operator">
+      <a href="/operator/news.html#apache-solr-operatortm-v091-available"><b>NEWS:</b> Apache Solr Operator™ v0.9.1 available</a> <span class="news-date">(25.Mar)</span>
     </p>
   </div>
 </section>
@@ -139,7 +155,7 @@
   <div class="row">
     <div class="large-10 large-offset-1 columns">
       <div class="annotation">
-        Apache Solr<sup>&trade;</sup> 9.8.0
+        Apache Solr<sup>&trade;</sup> 9.8.1
       </div>
       <h1>
         Solr is the blazing-fast, open source, multi-modal search platform built on the full-text, vector, and geospatial search capabilities of Apache Lucene<sup>&trade;</sup>.
@@ -322,13 +338,13 @@
   <div class="row">
     <div class="large-12 columns text-center">
       <div class="annotation">
-        Solr News | 23 January 2025
+        Solr News | 11 March 2025
       </div>
       <h1>
-        Apache Solr 9.8.0 available
+        Apache Solr 9.8.1 available
       </h1>
       <p>
-      The Solr PMC is pleased to announce the release of Apache Solr 9.8.0.  Download <a href="/downloads.html">here</a>.
+      The Solr PMC is pleased to announce the release of Apache Solr 9.8.1.  Download <a href="/downloads.html">here</a>.
       </p>
       <a href="/news.html"><span class="white">Read More News</span></a>
     </div>

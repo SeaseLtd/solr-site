@@ -52,7 +52,23 @@
 
    <link rel="icon" href="/theme/images/favicon.ico" type="image/x-icon">
    <link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon">
-  </head>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(["disableCookies"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '76']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->  </head>
 
   <body class="page homepage"  x-ng-app="page" x-ng-controller="page.controllers.main">
 <div class="contain-to-grid">
@@ -113,10 +129,10 @@
     </div>
   </div>
 </section>
-<section class="topnews-operator" latest-date="2025-01-22">
+<section class="topnews-operator" latest-date="2025-03-25">
   <div class="row">
-    <p id="apache-solr-operatortm-v090-available">
-      <a href="/operator/news.html#apache-solr-operatortm-v090-available"><b>NEWS:</b> Apache Solr Operator™ v0.9.0 available</a> <span class="news-date">(22.Jan)</span>
+    <p id="apache-solr-operatortm-v091-available">
+      <a href="/operator/news.html#apache-solr-operatortm-v091-available"><b>NEWS:</b> Apache Solr Operator™ v0.9.1 available</a> <span class="news-date">(25.Mar)</span>
     </p>
   </div>
 </section>
@@ -124,7 +140,7 @@
   <div class="row">
     <div class="large-10 large-offset-1 columns">
       <div class="annotation">
-        Apache Solr Operator<sup>&trade;</sup> v0.9.0
+        Apache Solr Operator<sup>&trade;</sup> v0.9.1
       </div>
       <h1>
         The Apache Solr Operator is built to reliably manage Apache Solr<sup>&trade;</sup> on Kubernetes.
@@ -388,13 +404,13 @@
   <div class="row">
     <div class="large-12 columns text-center">
       <div class="annotation">
-        Solr Operator News | 22 January 2025
+        Solr Operator News | 25 March 2025
       </div>
       <h1>
-        Apache Solr Operator v0.9.0 available
+        Apache Solr Operator v0.9.1 available
       </h1>
       <p>
-      The Solr PMC is pleased to announce the release of Apache Solr Operator v0.9.0. Artifacts can be found <a href="/operator/artifacts.html">here</a>.
+      The Solr PMC is pleased to announce the release of Apache Solr Operator v0.9.1. Artifacts can be found <a href="/operator/artifacts.html">here</a>.
       </p>
       <a href="/operator/news.html"><span class="white">Read More News</span></a>
     </div>
